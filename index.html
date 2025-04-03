@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stripe Payment Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h3 {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>Stripe Payment Gateway Page</h3>
+    
+    <!-- Formul pentru plata -->
+    <form action="/payment" method="POST">
+        <script
+            src="https://checkout.stripe.com/checkout.js" 
+            class="stripe-button"
+            data-key="<%= key %>"  <!-- Cheia publică Stripe -->
+            data-amount="5000"     <!-- Suma de plată (în cenți) -->
+            data-currency="usd"    <!-- Moneda -->
+            data-name="My Shop"
+            data-description="Purchase"
+            data-image="https://example.com/your-logo.png"  <!-- Logo-ul tău -->
+            data-locale="auto">
+        </script>
+    </form>
+
+</body>
+</html>
